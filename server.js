@@ -34,12 +34,12 @@ app.post("/signin", (req, res) => {
           .from("users")
           .where("email", "=", req.body.email)
           .then(user => res.json(user[0]))
-          .catch(err => res.status(400).json("Unable to get user"));
+          .catch(err => res.status(400).json("unable to get user"));
       } else {
-        res.status(400).json("Wrong credentials");
+        res.status(400).json("wrong credentials");
       }
     })
-    .catch(err => res.status(400).json("Wrong credentials"));
+    .catch(err => res.status(400).json("wrong credentials"));
 });
 
 app.post("/register", (req, res) => {
